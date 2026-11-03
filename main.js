@@ -1333,21 +1333,21 @@ const EXPORT_FORMATS = [
     ext: ".doc",
     engine: "builtin",
     icon: "📄",
-    desc: "高保真 Word 规范文档，图片严格缩放自适应版心不超页，Word/WPS 完美打开。",
+    desc: "High-fidelity Word document with images automatically scaled to fit the page. Compatible with Word and WPS.",
     mime: "application/msword;charset=utf-8",
   },
   {
     id: "pdf",
-    name: "高保真 PDF 打印",
+    name: "High-Fidelity PDF Print",
     ext: ".pdf",
     engine: "builtin",
     icon: "🖨️",
-    desc: "针对 A4 纸张排版优化，白底黑字、高亮代码块，直接打印或存为 PDF。",
+    desc: "Optimized for A4 printing with a clean white background, code highlighting, and direct printing or saving as PDF.",
     mime: "application/pdf",
   },
   {
     id: "md",
-    name: "纯净标准 Markdown",
+    name: "Standard Markdown",
     ext: ".md",
     engine: "builtin",
     icon: "📝",
@@ -1378,7 +1378,7 @@ export default {
       enableHeader: false,
       headerText: "",
       enableFooter: false,
-      footerText: "第 {page} 页 / 共 {pages} 页",
+      footerText: "Page {page} of {pages}",
       watermarkText: "",
       watermarkMode: "tile-dense",
       buttonPosition: "toolbar",
@@ -1481,9 +1481,9 @@ export default {
       let selectedHeaderText = settings.headerText || article.title || "";
 
       let selectedEnableFooter = settings.enableFooter;
-      let selectedFooterText = settings.footerText || "第 {page} 页 / 共 {pages} 页";
+      let selectedFooterText = settings.footerText || "Page {page} of {pages}";
       if (/第\s*1\s*页\s*\/\s*共\s*1\s*页/.test(selectedFooterText)) {
-        selectedFooterText = "第 {page} 页 / 共 {pages} 页";
+        selectedFooterText = "Page {page} of {pages}";
       }
 
       let candidateFileName = (article.title || "Note").replace(/[\\/:*?"<>|]/g, "_");
@@ -1499,10 +1499,10 @@ export default {
               <div class="edgeever-export-modal-icon">📤</div>
               <div>
                 <h3 class="edgeever-export-modal-title">增强导出 (Enhancing Export)</h3>
-                <div class="edgeever-export-modal-subtitle">左侧调整排版参数，右侧实时所见即所得纸张预览</div>
+                <div class="edgeever-export-modal-subtitle">Adjust the layout settings on the left and preview the result on the right</div>
               </div>
             </div>
-            <button type="button" class="edgeever-export-modal-close-btn" title="关闭 (Esc)">✕</button>
+            <button type="button" class="edgeever-export-modal-close-btn" title="Close (Esc)">✕</button>
           </div>
 
           <!-- 双栏主体 -->
@@ -1905,9 +1905,9 @@ export default {
           }
 
           if (selectedFormat === "pdf") {
-            btnExport.textContent = "🖨️ 打开打印 / 保存 PDF";
+            btnExport.textContent = "🖨️ Print / Save as PDF";
           } else {
-            btnExport.textContent = "📥 立即导出并保存";
+            btnExport.textContent = "📥 Export and Save";
           }
         } else {
           livePaper.style.display = "none";
@@ -1915,10 +1915,10 @@ export default {
 
           if (selectedFormat === "hugo") {
             rawPreview.textContent = generateHugoMarkdown(article, article.rawMarkdown);
-            btnExport.textContent = "📥 导出博客 Markdown";
+            btnExport.textContent = "📥 Export Blog Markdown";
           } else if (selectedFormat === "pandoc") {
             const baseName = (fileNameInput.value || article.title || "Note").trim();
-            btnExport.textContent = "📋 复制 Pandoc 命令行";
+            btnExport.textContent = "📋 Copy Pandoc Command";
 
             rawPreview.innerHTML = `
               <div style="font-weight: 600; margin-bottom: 8px; color: var(--ee-export-primary);">⚙️ Pandoc 终端执行指令预览:</div>
