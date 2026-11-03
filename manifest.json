@@ -28,56 +28,56 @@
       {
         "key": "default_format",
         "type": "select",
-        "label": "默认导出格式",
+        "label": "Default Export Format",
         "default": "html",
         "options": [
-          { "value": "html", "label": "独立离线网页 (.html)" },
-          { "value": "doc", "label": "Word 文档 (.doc / 原生兼容)" },
-          { "value": "pdf", "label": "高保真排版打印 / PDF" },
-          { "value": "md", "label": "纯净标准 Markdown (.md)" },
-          { "value": "hugo", "label": "博客 Markdown (Hugo/Hexo)" }
+          { "value": "html", "label": "Standalone HTML (.html)" },
+          { "value": "doc", "label": "Word Document (.doc / native compatible)" },
+          { "value": "pdf", "label": "High-Fidelity Print / PDF" },
+          { "value": "md", "label": "Standard Markdown (.md)" },
+          { "value": "hugo", "label": "Blog Markdown (Hugo/Hexo)" }
         ]
       },
       {
         "key": "default_font_size",
         "type": "select",
-        "label": "正文默认字体大小",
+        "label": "Default Font Size",
         "default": "15",
         "options": [
-          { "value": "13", "label": "紧凑小字号 (13px)" },
-          { "value": "14", "label": "标准排版 (14px)" },
-          { "value": "15", "label": "舒适适中 (15px)" },
-          { "value": "16", "label": "易读大字 (16px)" },
-          { "value": "18", "label": "超大沉浸 (18px)" }
+          { "value": "13", "label": "Compact Small (13px)" },
+          { "value": "14", "label": "Standard (14px)" },
+          { "value": "15", "label": "Comfortable Medium (15px)" },
+          { "value": "16", "label": "Large (16px)" },
+          { "value": "18", "label": "Extra Large (18px)" }
         ]
       },
       {
         "key": "button_position",
         "type": "select",
-        "label": "增强导出快捷入口按钮位置",
+        "label": "Enhancing Export Button Position",
         "default": "toolbar",
         "options": [
-          { "value": "toolbar", "label": "嵌入编辑器格式工具栏末尾 (原生纯图标，推荐)" },
-          { "value": "fab", "label": "右下角悬浮按钮 (避开原生 AI，位于其上方)" },
-          { "value": "hidden", "label": "隐藏按钮 (仅通过快捷键或命令面板唤出)" }
+          { "value": "toolbar", "label": "Editor Toolbar (native icon, recommended)" },
+          { "value": "fab", "label": "Floating Button Bottom Right (above native AI button)" },
+          { "value": "hidden", "label": "Hidden Button (use keyboard shortcut or command palette)" }
         ]
       },
       {
         "key": "embed_images_base64",
         "type": "boolean",
-        "label": "HTML/Word 默认内联本地图片为 Base64（离线不丢图）",
+        "label": "Embed Local Images as Base64 in HTML/Word (for offline use),
         "default": true
       },
       {
         "key": "include_frontmatter",
         "type": "boolean",
-        "label": "默认包含 YAML Frontmatter 元数据（标题/标签/日期）",
+        "label": "Include YAML Frontmatter Metadata by Default (Title/Tags/Date)",
         "default": true
       },
       {
         "key": "pandoc_path",
         "type": "text",
-        "label": "Pandoc 命令行执行路径 (仅桌面客户端需要，Web/移动端无需安装)",
+        "label": "Pandoc Executable Path (desktop client only; not required for Web/Mobile)",
         "default": "pandoc"
       }
     ]
