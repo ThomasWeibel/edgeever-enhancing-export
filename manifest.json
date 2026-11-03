@@ -1,85 +1,105 @@
 {
-  "type": "plugin",
-  "id": "org.edgeever.plugins.enhancing-export",
+  "id": "edgeever-enhancing-export",
   "name": "Enhancing Export",
   "version": "1.0.10",
-  "apiVersion": "2",
-  "settingsUi": "host",
-  "description": "Professional multi-format export plugin inspired by obsidian-enhancing-export. Export EdgeEver notes to standalone HTML (with syntax highlighting & embedded images), Word (.doc), Markdown (Standard & Hugo), high-fidelity PDF, and Pandoc formats with elegant white typography.",
-  "locales": {
-    "zh-CN": {
-      "name": "增强导出 (Enhancing Export)",
-      "description": "参考 obsidian-enhancing-export 打造的专业级多格式增强导出插件。支持将 EdgeEver 笔记导出为带代码语法高亮与图片的独立 HTML、Word 文档 (.doc)、纯净与博客 Markdown (Hugo/Hexo)、高保真 PDF 打印与 Pandoc 命令行扩展，采用经典纯白优雅排版。"
-    }
-  },
+  "description": "Enhanced export for EdgeEver with HTML, Word, PDF, Markdown and blog export.",
   "author": "zyhcs",
-  "entry": "./main.js",
-  "platforms": ["web", "desktop"],
-  "permissions": [
-    "notes:read",
-    "resources:read",
-    "editor:read",
-    "ui:notices",
-    "ui:commands",
-    "storage"
-  ],
-  "settings": {
-    "fields": [
-      {
-        "key": "default_format",
-        "type": "select",
-        "label": "Default Export Format",
-        "default": "html",
-        "options": [
-          { "value": "html", "label": "Standalone HTML (.html)" },
-          { "value": "doc", "label": "Word Document (.doc / native compatible)" },
-          { "value": "pdf", "label": "High-Fidelity Print / PDF" },
-          { "value": "md", "label": "Standard Markdown (.md)" },
-          { "value": "hugo", "label": "Blog Markdown (Hugo/Hexo)" }
-        ]
-      },
-      {
-        "key": "default_font_size",
-        "type": "select",
-        "label": "Default Font Size",
-        "default": "15",
-        "options": [
-          { "value": "13", "label": "Compact Small (13px)" },
-          { "value": "14", "label": "Standard (14px)" },
-          { "value": "15", "label": "Comfortable Medium (15px)" },
-          { "value": "16", "label": "Large (16px)" },
-          { "value": "18", "label": "Extra Large (18px)" }
-        ]
-      },
-      {
-        "key": "button_position",
-        "type": "select",
-        "label": "Enhancing Export Button Position",
-        "default": "toolbar",
-        "options": [
-          { "value": "toolbar", "label": "Editor Toolbar (native icon, recommended)" },
-          { "value": "fab", "label": "Floating Button Bottom Right (above native AI button)" },
-          { "value": "hidden", "label": "Hidden Button (use keyboard shortcut or command palette)" }
-        ]
-      },
-      {
-        "key": "embed_images_base64",
-        "type": "boolean",
-        "label": "Embed images as Base64",
-        "default": true
-      },
-      {
-        "key": "include_frontmatter",
-        "type": "boolean",
-        "label": "Include YAML Frontmatter Metadata by Default (Title/Tags/Date)",
-        "default": true
-      },
-      {
-        "key": "pandoc_path",
-        "type": "text",
-        "label": "Pandoc Executable Path (desktop client only; not required for Web/Mobile)",
-        "default": "pandoc"
-      }
-    ]
-  }
+  "main": "main.js",
+  "styles": "styles.css",
+  "settings": [
+    {
+      "key": "default_format",
+      "type": "select",
+      "label": "Default Export Format",
+      "default": "html",
+      "options": [
+        {
+          "value": "html",
+          "label": "Standalone HTML (.html)"
+        },
+        {
+          "value": "doc",
+          "label": "Word Document (.doc)"
+        },
+        {
+          "value": "pdf",
+          "label": "High-Fidelity Print / PDF"
+        },
+        {
+          "value": "md",
+          "label": "Standard Markdown (.md)"
+        },
+        {
+          "value": "hugo",
+          "label": "Blog Markdown (Hugo/Hexo)"
+        }
+      ]
+    },
+    {
+      "key": "default_font_size",
+      "type": "select",
+      "label": "Default Font Size",
+      "default": "15",
+      "options": [
+        {
+          "value": "13",
+          "label": "Compact Small (13px)"
+        },
+        {
+          "value": "14",
+          "label": "Standard (14px)"
+        },
+        {
+          "value": "15",
+          "label": "Comfortable Medium (15px)"
+        },
+        {
+          "value": "16",
+          "label": "Large (16px)"
+        },
+        {
+          "value": "18",
+          "label": "Extra Large (18px)"
+        }
+      ]
+    },
+    {
+      "key": "button_position",
+      "type": "select",
+      "label": "Enhancing Export Button Position",
+      "default": "toolbar",
+      "options": [
+        {
+          "value": "toolbar",
+          "label": "Editor Toolbar (recommended)"
+        },
+        {
+          "value": "fab",
+          "label": "Floating Button Bottom Right"
+        },
+        {
+          "value": "hidden",
+          "label": "Hidden Button"
+        }
+      ]
+    },
+    {
+      "key": "embed_images_base64",
+      "type": "boolean",
+      "label": "Embed images as Base64",
+      "default": true
+    },
+    {
+      "key": "include_frontmatter",
+      "type": "boolean",
+      "label": "Include YAML Frontmatter Metadata",
+      "default": true
+    },
+    {
+      "key": "pandoc_path",
+      "type": "text",
+      "label": "Pandoc Executable Path",
+      "default": "pandoc"
+    }
+  ]
 }
