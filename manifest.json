@@ -1,5 +1,6 @@
 {
   "id": "edgeever-enhancing-export",
+  "type": "plugin",
   "name": "Enhancing Export",
   "version": "1.0.10",
   "description": "Enhanced export for EdgeEver with HTML, Word, PDF, Markdown and blog export.",
