@@ -65,7 +65,7 @@
       {
         "key": "embed_images_base64",
         "type": "boolean",
-        "label": "Embed Local Images as Base64 in HTML/Word (for offline use),
+        "label": "Embed Local Images as Base64 in HTML/Word (for offline use)",
         "default": true
       },
       {
